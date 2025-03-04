@@ -7,6 +7,12 @@ draggedPiece;
 function changeBGImage() {
     puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
 
+  dev.hs.script
+
+ dev.hs.drop.zone.bug
+ dev.hs.drag&drop.bug
+
+
     //*Second correction 
     let puzzleContainer = document.querySelector(".puzzle-pieces"); //* Removes pieces from the drop-zones and returns them to the starting area
     console.log(puzzleContainer);
@@ -28,6 +34,10 @@ function changeBGImage() {
     function getPieceName(index) {
         const pieceNames = ["topLeft", "topRight", "bottomLeft", "bottomRight"];
         return pieceNames[index];
+dev.hs.script
+
+
+dev.hs.drag&drop.bug
 
 
 }
@@ -46,9 +56,17 @@ function handleDrop(e) {
     e.preventDefault();
     console.log(`dropped something on me`);
 
+ dev.hs.script
     if(!this.hasChildNodes()) //*first correction
  
     this.appendChild(draggedPiece);
+
+ dev.hs.drag&drop.bug
+    if(!this.hasChildNodes()) //*first correction
+ 
+    this.appendChild(draggedPiece);
+
+
 }
 
 
