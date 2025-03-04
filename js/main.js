@@ -7,6 +7,7 @@ draggedPiece;
 function changeBGImage() {
     puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
 
+ dev.hs.drop.zone.bug
     //*Second correction 
     let puzzleContainer = document.querySelector(".puzzle-pieces"); //* Removes pieces from the drop-zones and returns them to the starting area
     console.log(puzzleContainer);
@@ -29,6 +30,7 @@ function changeBGImage() {
         const pieceNames = ["topLeft", "topRight", "bottomLeft", "bottomRight"];
         return pieceNames[index];
 
+ main
 }
 
 function handleStartDrag() {
