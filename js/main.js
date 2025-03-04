@@ -7,6 +7,29 @@ draggedPiece;
 function changeBGImage() {
     puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
 
+    //*Second correction 
+    let puzzleContainer = document.querySelector(".puzzle-pieces"); //* Removes pieces from the drop-zones and returns them to the starting area
+    console.log(puzzleContainer);
+
+    dropZones.forEach((zone) => {
+        if (zone.firstChild) {
+            puzzleContainer.appendChild(zone.firstChild); //*Move the piece back to the piece area
+        }
+    });
+
+    //*Extra Correction
+    // Updates puzzle piece images to corresponding set
+    puzzlePieces.forEach((piece, index) => {
+        piece.src = `images/${getPieceName(index)}${this.id}.jpg`;
+    });
+}
+
+    // Function that helps in mapping the part index to file names
+    function getPieceName(index) {
+        const pieceNames = ["topLeft", "topRight", "bottomLeft", "bottomRight"];
+        return pieceNames[index];
+
+
 }
 
 function handleStartDrag() {
@@ -23,7 +46,11 @@ function handleDrop(e) {
     e.preventDefault();
     console.log(`dropped something on me`);
 
+    if(!this.hasChildNodes()) //*first correction
+ 
+    this.appendChild(draggedPiece);
 }
+
 
 theButtons.forEach(button => button.addEventListener('click', changeBGImage));
 
